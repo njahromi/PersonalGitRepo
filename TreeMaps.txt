@@ -1,0 +1,70 @@
+TREE MAPS -  Nathan, Ryan
+
+General Description?: 
+
+- We use it when we only need to store unique elements in a sorted order.
+- It is a counterpart to the TreeSet Interface
+
+Are TreeMaps Ordered or Indexed?:
+
+- Ordered, they store unique elements in a sorted order.
+
+Are TreeMaps threadsafe?
+
+- They are not threadsafe
+
+Do TreeMaps allow duplicates/nulls?:
+
+- Map Classes do not allow duplicate keys.
+
+What are 3-4 of their methods?:
+ (1) Map.Entry<K,V> ceilingEntry(K key)
+
+	It returns the key-value pair having the least key, greater than or equal to the specified key, or null if there is no such key.
+
+ (2) K ceilingKey(K key)
+	
+		It returns the least key, greater than the specified key or null if there is no such key.
+
+ (3) void clear()
+
+	It removes all the key-value pairs from a map.
+
+ (4) Object clone()
+
+	It returns a shallow copy of TreeMap instance.
+
+
+import java.util.*; 
+
+class Main 
+{ 
+	static void printFreq(int arr[]) 
+	{ 
+		TreeMap<Integer, Integer> tmap = 
+					new TreeMap<Integer, Integer>(); 
+
+		for (int i = 0; i < arr.length; i++) 
+		{ 
+			Integer c = tmap.get(arr[i]); 
+
+			if (tmap.get(arr[i]) == null) 
+			tmap.put(arr[i], 1); 
+
+
+			else
+			tmap.put(arr[i], ++c); 
+		} 
+
+		for (Map.Entry m:tmap.entrySet()) 
+		System.out.println("Frequency of " + m.getKey() + 
+							" is " + m.getValue()); 
+	} 
+
+	public static void main (String[] args) 
+	{ 
+		char arr[] = {a, b, c, d, e, f, g}; 
+		printFreq(arr); 
+	} 
+} 
+
